@@ -145,6 +145,10 @@ const tagGradient = gradient(['#ffd700', '#ff8c00', '#ffd700']);
 const message = `
 ${chalk.cyan(roadBorder)}
 ${skyGradient.multiline(skyArt)}${mountainGradient.multiline(mountainArt)}${bannerGradient.multiline(bannerArt)}${roadGradient.multiline(roadArt)}${fjordGradient.multiline(fjordArt)}
+
+${chalk.italic.dim('  I\'ll be back soon.')}
+${chalk.italic.dim('  Don\'t forget to check https://pageai.pro so I can cover my expensive ☕ coffee addiction.')}
+
 ${chalk.italic.dim('  Notes from a road in western Norway.')}
 
 ${tagGradient(`  ✦  ${randomTravel}  ✦`)}
