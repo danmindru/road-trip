@@ -1,4 +1,4 @@
-# road-trip 🛣️
+# roadtrips 🛣️
 
 ```
                           \     |     /
@@ -20,7 +20,7 @@
 
                               ______________________
                           ___/    ╔══════════════╗   \___
-                         /        ║   road-trip  ║       \
+                         /        ║   roadtrips  ║       \
                         /_________╚══════════════╝________\
                         |   .--.                    .--.   |
                         '──( O )──────────────────( O )──'
@@ -43,7 +43,7 @@ A scenic CLI package that sends you on a road trip down Norway's **Road 53** —
 ## Installation
 
 ```bash
-npm install -g road-trip
+npm install -g roadtrips
 ```
 
 ## Usage
@@ -51,13 +51,13 @@ npm install -g road-trip
 Simply run:
 
 ```bash
-road-trip
+roadtrips
 ```
 
 Or use with npx without installing:
 
 ```bash
-npx road-trip
+npx roadtrips
 ```
 
 ## Example Output
