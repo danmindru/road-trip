@@ -1,37 +1,44 @@
 # road-trip 🛣️
 
 ```
-                    /\\       /\\
-                   /  \\     /  \\
-                  /    \\   /    \\
-                 /  🏔️  \\ /  🏔️  \\
-                /        X        \\
-               /       /   \\       \\
-              /       /     \\       \\
-             /_______/       \\_______\\
-    ═══════════════════════════════════════
-         ╔═══════════════════════════╗
-         ║      R O A D   5 3      ║
-         ║    —— Norway ——>         ║
-         ╚═══════════════════════════╝
-    ═══════════════════════════════════════
-              ___________________
-             |  🚗  ·  ·  ·  ·  |
-             |___|_|_________|_|_|
-                   O       O
+                          \     |     /
+                           \    |    /                    .-~~~~-.
+                            \   |   /                 .-~~        ~~-.
+                       ──────( ☀ )──────              (   ~~clouds~~   )
+                            /   |   \                  `-..,,______,,..-'
+                           /    |    \
+                          /     |     \
+
+                                                                          ★
+            /\                                                           /\
+           /  \                  /\                                    /  \
+          /    \                /  \             /\                   /    \
+         /  /\  \              / /\ \           /  \                 /  /\  \
+        /  /  \  \    /\      / /  \ \    /\   / /\ \    /\        /  /  \  \
+       /  / /\ \  \  /  \    / / /\ \ \  /  \ / /  \ \  /  \      /  / /\ \  \
+      /__/_/__\_\__\/____\__/_/_/__\_\_\/____\/_/____\_\/____\____/__/_/__\_\__\
+
+                              ______________________
+                          ___/    ╔══════════════╗   \___
+                         /        ║   road-trip  ║       \
+                        /_________╚══════════════╝________\
+                        |   .--.                    .--.   |
+                        '──( O )──────────────────( O )──'
+                            `──'                    `──'
 ```
 
-A scenic CLI package that sends you on a road trip through Norway — right in your terminal! ✨
+A scenic CLI package that sends you on a road trip down Norway's **Road 53** — right in your terminal! ✨
 
 ## Features
 
-- 🛣️ **ASCII Road 53** — Mountains, highway, and a car ready for the open road
-- 🌅 **Beautiful Gradients** — Sunset oranges, sky blues, and golden highway tones
-- 🚗 **Road Trip Borders** — Scenic icons framing every message
-- 🎲 **69 Random Travel Messages** — A different road trip pun every time!
-  - Norway & fjord humor
-  - Road 53 adventure references
-  - Intelligent travel puns & warm wishes
+- 🌄 **Layered Norwegian scene** — sun, clouds, jagged snowy peaks, a car on the road, and a fjord below
+- 🅡🅞🅐🅓 **ANSI-Shadow `ROAD 53` banner** — bold figlet block letters framed in a double-line box
+- 🌅 **Five distinct gradient zones** — warm sunrise sky, cool alpine mountains, sunset banner, silver road, and deep-fjord blues
+- 🚗 **Road trip borders** — scenic icons framing every print
+- ✦ **70 short reflections from the road** — a different aphorism every run
+  - Quiet observations on fjords, weather, and slow travel
+  - Norway-specific notes (friluftsliv, midnight sun, ferries, switchbacks)
+  - Written to read more like an epigraph than a slogan
 
 ## Installation
 
@@ -55,13 +62,13 @@ npx road-trip
 
 ## Example Output
 
-Each run displays a random travel message like:
+Each run displays a short reflection from the road, such as:
 
-- *"May your fjords be deep and your detours be scenic!"* 🏔️
-- *"You're navigating life like a local on Road 53!"* 🛣️
-- *"You + Road 53 = unstoppable scenic shipping!"* 🚗
-- *"May your GPS never say 'recalculating' on Road 53!"* 📍
-- *"You're more reliable than a well-marked highway sign!"* 🪧
+- *"Tunnels feel like punctuation between paragraphs of light."*
+- *"On Road 53, slow is its own kind of arrival."*
+- *"Distance, in Norway, is measured in weather, not kilometers."*
+- *"A switchback is a sentence with a comma where you didn't expect one."*
+- *"The fjord doesn't perform; it persists."*
 
 ## License
 
