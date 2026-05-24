@@ -3,126 +3,123 @@
 const gradient = require('gradient-string');
 const chalk = require('chalk');
 
-const xmasTree = `
-░  ░░░░  ░░        ░░       ░░░       ░░░  ░░░░  ░
-▒   ▒▒   ▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒▒  ▒▒  ▒▒
-▓        ▓▓      ▓▓▓▓       ▓▓▓       ▓▓▓▓▓    ▓▓▓
-█  █  █  ██  ████████  ███  ███  ███  ██████  ████
-█  ████  ██        ██  ████  ██  ████  █████  ████
-
-░  ░░░░  ░░  ░░░░  ░░░      ░░░░      ░░
-▒▒  ▒▒  ▒▒▒   ▒▒   ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒
-▓▓▓    ▓▓▓▓        ▓▓  ▓▓▓▓  ▓▓▓      ▓▓
-██  ██  ███  █  █  ██        ████████  █
-█  ████  ██  ████  ██  ████  ███      ██
-
-
-                                        ★
-        ★                              /|\\
-       /|\\                           /_|_\\
-      /_|_\\              ★          /\\o/o\\
-      /\\o/\\            /|\\        /o\\.o/\\o\\
-     /o\\./\\          /_|_\\      /\\.o\\o/o\\.\\
-    /\\.o\\o/\\        /\\o/\\     /o\\o/\\.\\o/o\\
-   /___||___\\      /o\\./o\\   /\\./o\\o/o\\.\\o\\
-       ||         /\\.o\\o/\\  /o\\.\\o/o\\.\\o/o\\
-       ||        /o\\./\\o/\\ /\\o/o\\.\\o/o\\.\\o\\
-                /__/___\\__\\/__/___________\\__\\
-                       |||           |||
-                       |||           |||
+const roadTripArt = `
+                    /\\       /\\
+                   /  \\     /  \\
+                  /    \\   /    \\
+                 /  🏔️  \\ /  🏔️  \\
+                /        X        \\
+               /       /   \\       \\
+              /       /     \\       \\
+             /_______/       \\_______\\
+    ═══════════════════════════════════════
+         ╔═══════════════════════════╗
+         ║      R O A D   5 3      ║
+         ║    —— Norway ——>         ║
+         ╚═══════════════════════════╝
+    ═══════════════════════════════════════
+              ___________________
+             |  🚗  ·  ·  ·  ·  |
+             |___|_|_________|_|_|
+                   O       O
 `;
 
-const snowflakes = '❄ ❅ ❆ ❄ ❅ ❆ ❄ ❅ ❆ ❄ ❅ ❆';
+const roadBorder = '🚗 🛣️ ⛽ 🌅 🛣️ 🚗 🌄 🛣️ ⛽ 🚗 🌅 🛣️';
 
-const cheerfulSentences = [
-  "You're more amazing than a perfectly debugged codebase! 🐛✨",
-  "Santa checked his list twice, and you're on the NICE side of production! 🎅",
-  "May your bugs be few and your coffee be strong! ☕",
-  "You deserve more presents than there are npm packages! 📦",
-  "Your smile could light up a Christmas tree AND a server room! 💡",
-  "Wishing you zero merge conflicts in the new year! 🔀",
-  "You're the star on top of everyone's tree! ⭐",
-  "May your code compile on the first try, just like grandma's cookies! 🍪",
-  "You're so bright, even Rudolph is jealous! 🦌",
-  "Here's to a year of 200 OK responses! 🎉",
-  "You're more reliable than localhost! 🏠",
-  "May your holidays be as sweet as syntactic sugar! 🍬",
-  "You're the gift that keeps on giving, like a well-maintained open source project! 🎁",
-  "Jingle all the way to a successful deployment! 🔔",
-  "You light up the room like RGB keyboard backlighting! 🌈",
-  "May your stack traces always lead to quick fixes! 📚",
-  "You're cooler than the other side of the server pillow! ❄️",
-  "Wishing you logs full of success messages! 📝",
-  "You're the reason the nice list exists! 📋",
-  "May your holiday queries return all the joy! 🎊",
-  "You've got more charm than a fully-typed TypeScript project! 💎",
-  "Here's to async/awaiting all your dreams to come true! 💫",
-  "You're more precious than a working production environment on a Friday! 🏆",
-  "May your New Year be as optimized as your algorithms! ⚡",
-  "You're like hot cocoa for the soul! ☕🤎",
-  "Wishing you branches full of gifts, not merge conflicts! 🌿",
-  "You could make even a 500 error look festive! 🎄",
-  "May your holiday cache be full of warm memories! 💾",
-  "You're the commit message everyone loves to read! 💝",
-  "Here's to a year of shipping features, not bugs! 🚀",
-  "You're more uplifting than a successful npm install! 📈",
-  "May your fireplace be warm and your servers be cool! 🔥❄️",
-  "You're the semicolon that makes everything work! ;",
-  "Wishing you a life with no null pointer exceptions! 🎯",
-  "You spread joy faster than a recursive function! 🔄",
-  "May your holidays have zero loading spinners! ⏳",
-  "You're more valuable than a working CI/CD pipeline! 🔧",
-  "Here's to catching feelings, not exceptions! 💕",
-  "You're the documentation everyone wishes they had! 📖",
-  "May your eggnog be strong and your passwords stronger! 🥛🔐",
-  "You make every day feel like a successful demo! 🎬",
-  "Wishing you containers full of holiday cheer! 🐳",
-  "You're the pull request that gets approved immediately! ✅",
-  "May your terminal always show green checkmarks! ✓",
-  "Here's to deploying happiness everywhere you go! 🌍",
-  "You're more essential than version control! 🗂️",
-  "May your holidays scale infinitely! 📊",
-  "You're the feature everyone's been waiting for! 🌟",
-  "Wishing you a year of clean code and cleaner conscience! 🧹💚",
-  "You and your AI pair programmer make the ultimate duo! 🤖💜",
-  "May your prompts be clear and your completions be perfect! ✨🤖",
-  "You're vibing so hard, even Claude is impressed! 🎧💻",
-  "Wishing you AI-assisted code that actually works on the first try! 🪄",
-  "You're the human in the loop that makes AI shine! 🌟🤝",
-  "May your context window always fit your entire codebase! 📚🤖",
-  "You're giving main character energy in your AI prompts! 🎬✨",
-  "Here's to vibe coding your way to production! 🎶🚀",
-  "Your natural language is basically a programming language now! 🗣️💻",
-  "May your AI never hallucinate your dependencies! 🦄📦",
-  "You're so good at prompting, you could teach a masterclass! 🎓🤖",
-  "Wishing you tab-completions that read your mind! ⌨️🧠",
-  "You + AI = unstoppable shipping machine! 🚂💨",
-  "May your copilot always suggest the right code! ✈️👨‍✈️",
-  "You're fluent in both Python AND talking to robots! 🐍🤖",
-  "Here's to building apps by just describing them! 🏗️✨",
-  "Your vibe is immaculate and so is your generated code! 💅💻",
-  "May your AI assistant always understand the assignment! 📝🤖",
-  "You're proof that the future of coding is conversational! 💬🚀",
-  "Wishing you endless inspiration and infinite tokens! 🎨♾️",
+const travelSentences = [
+  "May your fjords be deep and your detours be scenic!",
+  "You're navigating life like a local on Road 53!",
+  "Keep calm and cruise the Norwegian coast!",
+  "Some roads you travel; Road 53 you remember!",
+  "You're the scenic overlook everyone pulls over for!",
+  "May your tank be full and your playlist be impeccable!",
+  "You're more reliable than a well-marked highway sign!",
+  "Here's to miles of open road and zero toll booth anxiety!",
+  "You make every rest stop feel like a destination!",
+  "May your GPS never say 'recalculating' on Road 53!",
+  "You're the kind of traveler who finds beauty in a hairpin turn!",
+  "Wishing you tailwinds, clear skies, and empty lanes ahead!",
+  "You're smoother than freshly paved asphalt!",
+  "May your road trip snacks never run out before the border!",
+  "You're giving main character energy on a coastal drive!",
+  "Here's to chasing midnight sun, not deadlines!",
+  "You could make even a road closure feel like an adventure!",
+  "May your cabin views always exceed the brochure!",
+  "You're the co-pilot everyone wants on a long haul!",
+  "Wishing you ferries that arrive on time and views that never quit!",
+  "You're more uplifting than the first glimpse of a fjord!",
+  "May your wool layers be warm and your coffee be strong!",
+  "You spread wanderlust faster than a viral travel photo!",
+  "Here's to taking the scenic route and meaning it!",
+  "You're the reason people believe in slow travel!",
+  "May your Road 53 journey have more wow than wow-moments!",
+  "You're sharper than a switchback at golden hour!",
+  "Wishing you tunnels that feel short and bridges that feel epic!",
+  "You + open road = unstoppable adventure machine!",
+  "May your dash cam capture nothing but glory!",
+  "You're fluent in both Norwegian hello and universal awe!",
+  "Here's to building memories one kilometer at a time!",
+  "Your vibe is immaculate and so is your sense of direction!",
+  "May your travel plans always include an extra day!",
+  "You're proof that the best routes aren't always the fastest!",
+  "Wishing you endless horizons and infinite pull-off points!",
+  "You make every mile marker feel like a milestone!",
+  "May your roadside waffles taste like pure happiness!",
+  "You're the view worth stopping for!",
+  "Here's to driving into sunsets, not away from problems!",
+  "You're more essential than a good pair of driving shoes!",
+  "May your Road 53 stories scale infinitely at dinner parties!",
+  "You're the highlight reel everyone's been waiting to hear!",
+  "Wishing you a journey with clean air and a cleaner conscience!",
+  "You and the open road make the ultimate duo!",
+  "May your curves be gentle and your vistas be dramatic!",
+  "You're cruising so smoothly, even the trolls are impressed!",
+  "Wishing you a route where every turn reveals something new!",
+  "You're the human compass that makes any road trip shine!",
+  "May your context window always fit the entire coastline!",
+  "You're giving 'discovered a hidden gem' energy!",
+  "Here's to vibe driving your way to the next fjord!",
+  "Your sense of adventure is basically a navigation system!",
+  "May your itinerary never hallucinate a shortcut through a mountain!",
+  "You're so good at road tripping, you could teach a masterclass!",
+  "Wishing you rest areas that read your mind!",
+  "You + Road 53 = unstoppable scenic shipping!",
+  "May your co-pilot always suggest the right turnoff!",
+  "You're fluent in both silence and spectacular views!",
+  "Here's to exploring Norway one breathtaking bend at a time!",
+  "Your road trip aura is immaculate!",
+  "May your travel companion always understand the assignment!",
+  "You're proof that the future of travel is intentional!",
+  "Wishing you endless inspiration and infinite viewpoints!",
+  "May your tolls be cheap and your memories be priceless!",
+  "You're more precious than the last parking spot at a lookout!",
+  "Here's to async-awaiting every summit on the horizon!",
+  "You light up the dashboard like a northern summer sky!",
+  "May your Road 53 playlist never repeat a single skip!",
+  "You're cooler than the breeze off a Norwegian lake!",
+  "Wishing you logs full of 'best day ever' entries!",
+  "You're the reason people buy those little car stickers!",
+  "May your holiday queries return nothing but open road!",
+  "You've got more charm than a fishing village at dawn!",
 ];
 
-const randomCheer = cheerfulSentences[Math.floor(Math.random() * cheerfulSentences.length)];
+const randomTravel = travelSentences[Math.floor(Math.random() * travelSentences.length)];
 
-const xmasGradient = gradient(['#ff0000', '#00ff00', '#ff0000']);
-const goldGradient = gradient(['#ffd700', '#ffec8b', '#ffd700']);
-const pinkGradient = gradient(['#ff69b4', '#ff1493', '#ff69b4']);
+const sunsetGradient = gradient(['#ff6b35', '#f7c59f', '#2ec4b6']);
+const skyGradient = gradient(['#4a90d9', '#87ceeb', '#ffd700']);
+const roadGradient = gradient(['#ffd700', '#ff8c00', '#ffd700']);
 
 const message = `
-${chalk.cyan(snowflakes)}
+${chalk.cyan(roadBorder)}
 
-${xmasGradient(xmasTree)}
-${goldGradient('✨ MERRY CHRISTMAS & HAPPY NEW YEAR! ✨')}
+${sunsetGradient(roadTripArt)}
+${skyGradient('✨ WELCOME TO ROAD 53 — NORWAY AWAITS! ✨')}
 
-${chalk.green('May your holidays be filled with joy, love, and lots of code! 🎁')}
+${chalk.green('May your journey be filled with fjords, fresh air, and open road! 🛣️')}
 
-${pinkGradient(randomCheer)}
+${roadGradient(randomTravel)}
 
-${chalk.cyan(snowflakes)}
+${chalk.cyan(roadBorder)}
 `;
 
 console.log(message);
